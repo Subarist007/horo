@@ -1,6 +1,8 @@
 import gettext
-
+from horoscope.models import Forecast
+from datetime import date, timedelta
 from django.shortcuts import render
+
 
 zodiac_dict = {
     'aries': 'Овен - первый знак зодиака, планета Марс (с 21 марта по 20 апреля).',
@@ -26,9 +28,14 @@ def index(request):
 
 
 def sign_zodiac(request, sign_zodiac):
-
+    today = date.today().isoformat()
+    yesterday = date.today() - timedelta(days=1)
     context = {
-        'title': 'Horoscope',
+        'title': zodiac_dict[sign_zodiac].split()[0],
         'sign': zodiac_dict[sign_zodiac],
+        'description': Forecast.objects.filter(data=today, name=sign_zodiac)[0].description,
+        'lucky_number': Forecast.objects.filter(data=today, name=sign_zodiac)[0].lucky_number,
+        'color': Forecast.objects.filter(data=today, name=sign_zodiac)[0].color,
+        'date': today
     }
     return render(request, 'horoscope/sign_zodiac.html', context)
