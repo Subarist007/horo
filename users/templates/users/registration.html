@@ -1,0 +1,25 @@
+{% extends 'horoscope/base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>{{ title }}</title>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'style_login.css' %}">
+{% endblock %}
+
+{% block login %}
+<div class="box">
+    <h1>Регистрация</h1>
+    <input type="text" name="" placeholder="Имя пользователя">
+    <input type="password" name="" placeholder="Пароль">
+    <input type="password" name="" placeholder="Повторите пароль">
+    <input type="email" name="" placeholder="Электронная почта">
+    <input type="date" name="" placeholder="Дата рождения">
+    <input type="submit" name="" value="Регистрация">
+    <div>
+        Уже есть аккаунт? <a href="/login/">Войдите</a>
+    </div>
+</div>
+{% endblock %}
