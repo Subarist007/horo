@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-    <title>{{ title }}</title>
+    <title>Регистрация</title>
 {% endblock %}
 
 {% block css %}
@@ -10,16 +10,19 @@
 {% endblock %}
 
 {% block login %}
-<div class="box">
+<form class="box" action="{% url 'registration' %}" method="post">
     <h1>Регистрация</h1>
-    <input type="text" name="" placeholder="Имя пользователя">
-    <input type="password" name="" placeholder="Пароль">
-    <input type="password" name="" placeholder="Повторите пароль">
-    <input type="email" name="" placeholder="Электронная почта">
-    <input type="date" name="" placeholder="Дата рождения">
+    {% csrf_token %}
+    {{ form.first_name }}
+    {{ form.last_name }}
+    {{ form.username }}
+    {{ form.email }}
+    {{ form.date_birth }}
+    {{ form.password1 }}
+    {{ form.password2 }}
     <input type="submit" name="" value="Регистрация">
     <div>
         Уже есть аккаунт? <a href="/login/">Войдите</a>
     </div>
-</div>
+</form>
 {% endblock %}

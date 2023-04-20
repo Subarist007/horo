@@ -82,7 +82,7 @@ nav ul li a:hover {
     text-transform: uppercase;
     font-weight: 500;
 }
-.box input[type = "text"],.box input[type = "password"]{
+.box input[type = "text"],.box input[type = "password"],.box input[type = "email"]{
     border: 0;
     background: none;
     display: block;
@@ -90,14 +90,14 @@ nav ul li a:hover {
     text-align: center;
     border: 2px solid #000;
     padding: 14px 10px;
-    width: 180px;
+    width: 200px;
     outline: none;
     color: #000;
     border-radius: 24px;
     transition: 0.25s;
 }
 
-.box input[type = "text"]:focus,.box input[type = "password"]:focus{
+.box input[type = "text"]:focus,.box input[type = "password"],.box input[type = "email"]:focus{
     width: 220px;
     border-color: rgba(39, 72, 235, 0.922);
 }
