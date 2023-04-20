@@ -27,15 +27,15 @@ def index(request):
     return render(request, 'horoscope/index.html', context)
 
 
-def sign_zodiac(request, sign_zodiac):
+def sign_zodiac(request, zodiac_sign):
     today = date.today().isoformat()
     yesterday = date.today() - timedelta(days=1)
     context = {
-        'title': zodiac_dict[sign_zodiac].split()[0],
-        'sign': zodiac_dict[sign_zodiac],
-        'description': Forecast.objects.filter(data=today, name=sign_zodiac)[0].description,
-        'lucky_number': Forecast.objects.filter(data=today, name=sign_zodiac)[0].lucky_number,
-        'color': Forecast.objects.filter(data=today, name=sign_zodiac)[0].color,
+        'title': zodiac_dict[zodiac_sign].split()[0],
+        'sign': zodiac_dict[zodiac_sign],
+        'description': Forecast.objects.filter(data=today, name=zodiac_sign)[0].description,
+        'lucky_number': Forecast.objects.filter(data=today, name=zodiac_sign)[0].lucky_number,
+        'color': Forecast.objects.filter(data=today, name=zodiac_sign)[0].color,
         'date': today
     }
     return render(request, 'horoscope/sign_zodiac.html', context)
