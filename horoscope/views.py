@@ -39,3 +39,9 @@ def sign_zodiac(request, zodiac_sign):
         'date': today
     }
     return render(request, 'horoscope/sign_zodiac.html', context)
+
+def login(request):
+    context = {
+        'title': 'Вход',
+    }
+    return render(request, 'horoscope/form.html', context)
