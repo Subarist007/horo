@@ -68,33 +68,65 @@ nav ul li a:hover {
     width: 350px;
     padding: 40px;
     position: absolute;
-    top: 50%;
+    top: 57%;
     left: 50%;
     transform: translate(-50%,-50%);
-    background: #edeaea;
+    background: none;/*#edeaea*/
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     border-radius: 24px;
+    border: 2px solid #fff;
+    /* display: flex;
+    width: 50%;
+    flex-wrap: wrap;
+    padding-bottom: 15px; */
 }
 
 .box h1 {
-    color: #000;
+    color: white;
     text-transform: uppercase;
     font-weight: 500;
+    /* font-size: 26px; */
+    font-weight: 600;
+    /* text-align: center; */
+    /* padding-bottom: 6px; */
+    /* color: white; */
+    text-shadow: 2px 2px 2px black;/**/
 }
+
+
+.box input[type = "date"]{
+    border: 0;
+    background: #ffff00e0;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #fff;
+    padding: 10px 10px;
+    width: 200px;
+    outline: none;
+    color: #000;
+    border-radius: 15px;
+}
+
+.box input::placeholder{
+    color: #fff;
+}
+
 .box input[type = "text"],.box input[type = "password"],.box input[type = "email"]{
     border: 0;
     background: none;
     display: block;
     margin: 20px auto;
     text-align: center;
-    border: 2px solid #000;
-    padding: 14px 10px;
+    border: 2px solid #fff;
+    padding: 10px 10px;
     width: 200px;
     outline: none;
-    color: #000;
-    border-radius: 24px;
+    color: #fff;
+    border-radius: 15px;
     transition: 0.25s;
+    
 }
 
 .box input[type = "text"]:focus,.box input[type = "password"],.box input[type = "email"]:focus{
@@ -111,12 +143,21 @@ nav ul li a:hover {
     border: 2px solid rgb(25, 255, 17);
     padding: 14px 40px;
     outline: none;
-    color: #000;
+    color: white;
     border-radius: 24px;
     transition: 0.25s;
     cursor: pointer;
+    
 }
 
 .box input[type = "submit"]:hover{
     background: rgb(25, 255, 17);
+}
+
+.question {
+    color: white;
+}
+
+.question a{
+    color: rgb(25, 255, 17);
 }

@@ -14,12 +14,13 @@ class UserLoginForm(AuthenticationForm):
 class DateInput(forms.DateInput):
     input_type = 'date'
 
+
 class UserRegistrationForm(UserCreationForm):
     first_name = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Имя'}))
     last_name = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Фамилия'}))
     username = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Имя пользователя'}))
     email = forms.CharField(widget=forms.EmailInput(attrs={'placeholder': 'Электронная почта'}))
-    date_birth = forms.DateField(widget=DateInput(attrs={'placeholder': 'Дата рождения'}))
+    date_birth = forms.DateField(widget=DateInput())
     password1 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Пароль'}))
     password2 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Подтвердите пароль'}))
     class Meta:
