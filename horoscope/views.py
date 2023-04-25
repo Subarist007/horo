@@ -22,10 +22,23 @@ zodiac_dict = {
 # Create your views here.
 def index(request):
     context = {
-        'title': 'Horoscope',
+        'title': 'Гороскоп',
     }
     return render(request, 'horoscope/index.html', context)
 
+
+def about(request):
+    context = {
+        'title': 'О проекте',
+    }
+    return render(request, 'horoscope/about.html', context)
+
+
+def contacts(request):
+    context = {
+        'title': 'Контакты',
+    }
+    return render(request, 'horoscope/contacts.html', context)
 
 def sign_zodiac(request, zodiac_sign):
     today = date.today().isoformat()

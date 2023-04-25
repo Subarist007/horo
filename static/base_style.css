@@ -55,7 +55,31 @@ nav ul li a:hover {
     background-position: 100% 0%, 0% 100%, 0% 100%, 100% 0%;
 }
 
+.info {
+    width: 50%;
+    margin: auto;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 7px 10px;
+    border-radius: 3px;
+    font-size: 20px;
+    
+    margin-bottom: 30px;
+}
+
 .btn {
+    margin: 20px;
+    text-decoration: none;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    
+}
+
+.login {
     text-decoration: none;
     color: #fff;
     border: 1px solid #fff;
@@ -65,7 +89,7 @@ nav ul li a:hover {
 
 .content {
     width: 50%;
-    margin: 100px auto 0;
+    margin: 70px auto 0;
     color: #fff;
 }
 
@@ -75,15 +99,15 @@ nav ul li a:hover {
 }
 
 .content h2 {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     font-size: 40px;
 }
 
 .content p {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 24px;
-    margin-bottom: 40px;
-    text-align: justify;
+    margin-bottom: 10px;
+    text-align: center; /*justify*/
 }
 
 .zodiac-signs {

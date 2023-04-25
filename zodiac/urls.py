@@ -16,12 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from horoscope.views import index
+from horoscope.views import index, about, contacts
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
+    path('about/', about, name='about'),
+    path('contacts/', contacts, name='contacts'),
     path('login/', include('users.urls'), name='login'),
-
     path('<zodiac_sign>/', include('horoscope.urls'), name='horoscope'),
 ]

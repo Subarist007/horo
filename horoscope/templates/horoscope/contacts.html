@@ -1,0 +1,21 @@
+{% extends 'horoscope/index.html' %}
+{% load static %}
+
+
+{% block title %}
+    <title>{{ title }}</title>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'base_style.css' %}">
+{% endblock %}
+
+
+{% block content %}
+  <div class="content">
+      <h1>Связаться с нами</h1>
+      <p>Вы можете написать нам на почту horoscope@mail.ru</p>
+  </div>
+{% endblock %}
+
+
