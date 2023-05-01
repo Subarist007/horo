@@ -19,10 +19,10 @@ from django.urls import path, include
 from horoscope.views import index, about, contacts
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', index, name='index'),
-    path('about/', about, name='about'),
-    path('contacts/', contacts, name='contacts'),
-    path('login/', include('users.urls'), name='login'),
-    path('<zodiac_sign>/', include('horoscope.urls'), name='horoscope'),
+    path('admin/', admin.site.urls), # Страница админа
+    path('', index, name='index'), # Главная страница
+    path('about/', about, name='about'), # Страница О проекте
+    path('contacts/', contacts, name='contacts'), # Страница Контакты
+    path('login/', include('users.urls'), name='login'), # Страница входа\регистрации
+    path('<zodiac_sign>/', include('horoscope.urls'), name='horoscope'), # Страница гороскопа для выбранного знака
 ]

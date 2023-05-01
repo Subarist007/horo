@@ -3,7 +3,7 @@ from horoscope.models import Forecast
 from datetime import date, timedelta
 from django.shortcuts import render
 
-
+"""Словарь соответствия знаков зодиака и описаний"""
 zodiac_dict = {
     'aries': 'Овен - первый знак зодиака, планета Марс (с 21 марта по 20 апреля).',
     'taurus': 'Телец - второй знак зодиака, планета Венера (с 21 апреля по 21 мая).',
@@ -19,37 +19,38 @@ zodiac_dict = {
     'pisces': 'Рыбы - двенадцатый знак зодиака, планеты Юпитер (с 20 февраля по 20 марта).',
 }
 
-# Create your views here.
+"""Обрабатывает главную страницу"""
 def index(request):
     context = {
         'title': 'Гороскоп',
     }
     return render(request, 'horoscope/index.html', context)
 
-
+"""О проекте"""
 def about(request):
     context = {
         'title': 'О проекте',
     }
     return render(request, 'horoscope/about.html', context)
 
-
+"""Контакты"""
 def contacts(request):
     context = {
         'title': 'Контакты',
     }
     return render(request, 'horoscope/contacts.html', context)
 
+"""Обрабатывает знаки зодиака"""
 def sign_zodiac(request, zodiac_sign):
-    today = date.today().isoformat()
-    yesterday = date.today() - timedelta(days=1)
+    today = date.today().isoformat() # Формирует сегодняшнюю дату
+    yesterday = date.today() - timedelta(days=1) # Формирует вчерашнюю дату
     context = {
-        'title': zodiac_dict[zodiac_sign].split()[0],
-        'sign': zodiac_dict[zodiac_sign],
-        'description': Forecast.objects.filter(data=today, name=zodiac_sign)[0].description,
-        'lucky_number': Forecast.objects.filter(data=today, name=zodiac_sign)[0].lucky_number,
-        'color': Forecast.objects.filter(data=today, name=zodiac_sign)[0].color,
-        'date': today
+        'title': zodiac_dict[zodiac_sign].split()[0], # Выбранный знак зодиака
+        'sign': zodiac_dict[zodiac_sign], # Описание выбранного знака
+        'description': Forecast.objects.filter(data=today, name=zodiac_sign)[0].description, # Описание прогноза гороскопа
+        'lucky_number': Forecast.objects.filter(data=today, name=zodiac_sign)[0].lucky_number, # Счастливое число
+        'color': Forecast.objects.filter(data=today, name=zodiac_sign)[0].color, # Счастливый цвет
+        'date': today # Выводит настоящую дату
     }
     return render(request, 'horoscope/sign_zodiac.html', context)
 

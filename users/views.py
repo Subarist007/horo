@@ -5,6 +5,7 @@ from django.urls import reverse
 from users.models import User
 from users.forms import UserLoginForm, UserRegistrationForm
 
+"""Вход пользователя"""
 def login(request):
     if request.method == 'POST':
         form = UserLoginForm(data=request.POST)
@@ -20,6 +21,7 @@ def login(request):
     context = {'form': form}
     return render(request, 'users/login.html', context)
 
+"""Регистрацию пользователя"""
 def registration(request):
     if request.method == 'POST':
         form = UserRegistrationForm(data=request.POST)

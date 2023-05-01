@@ -1,6 +1,6 @@
 from django.db import models
 
-# Create your models here.
+"""Формирование БД с необходимыми полями"""
 class Forecast(models.Model):
     name = models.CharField(max_length=12)
     data = models.DateField()
